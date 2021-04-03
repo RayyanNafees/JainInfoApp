@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Jain Info Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <style></style>
+    <script src="./email.min.js"></script>
+    <script>
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init("user_kaMQbGKNuOZV75pRUV7jD");
+        })();
+        Q = q => document.querySelector(q);
+        _Q = q => [...document.querySelectorAll(q)];
+        V = (q, n) => n ? _Q(q)[n].value : Q(q).value;
+        I = n => _Q('input')[n].value;
+    </script>
+</head>
+
+<body>
+    <h1>Sign Up</h1>
+    <form>
+        <input placeholder="First name">
+        <input placeholder="Last name">
+        <select>
+           <option>Gender</option>
+           <option>Male</option>
+           <option>Female</option>
+           <option>Other</option>
+       </select>
+
+        <input type="date" placeholder="Date of Birth">
+        <select placeholder="Programmes" value="Programmes">
+        <option>Digital Marketing</option>
+        <option>Web Designing</option>
+        <option>Affiliate Marketing</option>
+        <option>Advertising</option>
+    </select>
+
+        <textarea placeholder="Address"></textarea>
+        <input type="tel" placeholder="Phone no.">
+        <input type="email" placeholder="Email">
+
+        <select placeholder="Qualifications" value="Programmes">
+        <option>High School</option>
+        <option>Secondary High</option>
+        <option>Graduation</option>
+        <option>Post Graduation</option>
+        <option id="other">Other</option>
+    </select>
+        <input placeholder="Job Title">
+
+        <p><input type="checkbox" checked>I agree to the <a>Terms & conditions</a>.</p>
+
+        <input type="submit" value="Proceed">
+
+    </form>
+
+</body>
+<script>
+    emailjs.send("Jain Info App", "SignUp", {
+            fname = I(0),
+            lname = I(1),
+            gender = I(3),
+            dob,
+            service,
+            address,
+            number,
+            email,
+            qual,
+            job
+        })
+        .then(resp => 0)
+        .catch(err => 1);
+</script>
+
+
+</html>

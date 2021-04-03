@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Loader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: black;
+            border: 0;
+        }
+        
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            font-family: "Segoe WPC", "Segoe UI", sans-serif;
+        }
+        
+        #loader div {
+            margin-top: 10%;
+            text-align: center;
+        }
+        
+        #loader img {}
+        
+        #loader p {
+            font-size: x-large;
+            font-weight: 400;
+            text-align: center;
+            font-weight: 400;
+            color: #975bdf;
+        }
+        /*
+        #bar {
+            width: 150px;
+            height: 3px;
+            background: deepskyblue;
+            justify-self: center;
+            border-radius: 100px;
+            margin-left: calc(50% - 75px);
+            margin-top: 0;
+        }
+        
+        #bar #mover {
+            width: 70px;
+            background: blue;
+            border-radius: 100px;
+            height: 3px;
+        }
+        */
+        
+        @media screen and (max-width:360px) {
+            #loader div {
+                margin-top: 30%;
+            }
+            #loader p {
+                margin-top: 20px;
+                font-weight: 500;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <div>
+            <img src="JainInfo.png" alt="Jain Info Soft">
+            <p>Digital Marketing Company</p>
+            <div id="bar">
+                <div id="mover"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script>
+    // document.body.onload = document.getElementById('loader').remove();
+</script>
+
+</html>
