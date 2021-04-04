@@ -3,13 +3,24 @@
 
 <head>
     <title>login form</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="../B4/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/RayyanNafees/FA5PRO/css/all.min.css">
+
+    <script src="./email.min.js"></script>
+    <script>
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init("user_kaMQbGKNuOZV75pRUV7jD");
+        })();
+        Q = q => document.querySelector(q);
+        _Q = q => [...document.querySelectorAll(q)];
+        V = (q, n) => n ? _Q(q)[n].value : Q(q).value;
+        I = n => _Q('input')[n].value;
+        S = n => _Q('select')[n].selectedOptions[0].innerText
+    </script>
 
     <style>
         /* @media screen and (maxwidth:400px) {*/
@@ -36,17 +47,17 @@
         <div class="form-row">
             <div class="col">
                 <!-- fname -->
-                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" class="form-control" placeholder="First name" required />
             </div>
             <div class="col">
                 <!-- lname -->
-                <input type="text" class="form-control" placeholder="Last name">
+                <input type="text" class="form-control" placeholder="Last name" required />
             </div>
         </div>
 
         <div class="col-auto my-1">
             <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label> -->
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <select class="custom-select mr-sm-2">
                 <!-- select -->
               <option selected>--Gender--</option>
               <option value="1">Male</option>
@@ -59,12 +70,12 @@
             <div class="input-group-prepend">
                 <div class="input-group-text">DOB</div>
             </div>
-            <input type="date" class="form-control" placeholder="Date of Birth">
+            <input type="date" class="form-control" placeholder="Date of Birth" required />
         </div>
 
         <div class="col-auto my-1">
             <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label> -->
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <select class="custom-select mr-sm-2">
                 <!-- select -->
               <option selected>--Programmes--</option>
               <option value="1">Digital Marketing</option>
@@ -77,21 +88,21 @@
 
         <div class="input-group mb-2 mr-sm-2">
 
-            <textarea rows="3" class="form-control" placeholder="Address"></textarea>
+            <textarea rows="3" class="form-control" placeholder="Address" required></textarea>
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fal fa-phone"></i></div>
+            </div>
+            <input type="tel" class="form-control" placeholder="Number" required />
         </div>
 
         <div class="input-group mb-2 mr-sm-2">
             <div class="input-group-prepend">
                 <div class="input-group-text">@</div>
             </div>
-            <input type="text" class="form-control" placeholder="Number">
-        </div>
-
-        <div class="input-group mb-2 mr-sm-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text">@</div>
-            </div>
-            <input type="text" class="form-control" placeholder="Email">
+            <input type="text" class="form-control" placeholder="Email" required />
         </div>
 
         <div class="col-auto my-1">
@@ -109,20 +120,21 @@
 
         <div class="input-group mb-2 mr-sm-2">
             <div class="input-group-prepend">
-                <div class="input-group-text">@</div>
+                <div class="input-group-text"><i class="far fa-briefcase"></i></div>
             </div>
-            <input type="text" class="form-control" placeholder="Job Title">
+            <input type="text" class="form-control" placeholder="Job Title" required />
         </div>
         <br>
         <div class="col-auto my-1">
-            <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input">
-                <label class="custom-control-label">I agree to the <a href="/terms">Terms & Conditions</a></label>
+            <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                <input type="checkbox" class="custom-control-input" id="customControlInline" checked required />
+                <label class="custom-control-label" for="customControlInline">Remember my preference</label>
             </div>
+
         </div>
         <br>
         <div class="col-auto my-1">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Proceed</button>
         </div>
     </form>
 
@@ -135,5 +147,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+<script>
+    let form = Q('form')
+    let gender = _Q('select')[0].selected;
+    let progs = _Q('select')[1].selected;
+    let quals = _Q('select')[2].selected;
+
+    form.onsubmit = function() {
+        if (!(gender && progs && quals)) {
+            if (!gender)
+                _Q('select')[0].style.borderColor = 'red';
+            if (!progs)
+                _Q('select')[1].style.borderColor = 'red';
+            if (!quals)
+                _Q('select')[2].style.borderColor = 'red';
+
+            e.preventDefault();
+        }
+
+
+        emailjs.send("Jain Info App", "SignUp", {
+                gender: S(0),
+                service: S(1),
+                qual: S(2),
+                address: Q('textarea').value,
+                fname: I(0),
+                lname: I(1),
+                dob: I(2),
+                number: I(3),
+                email: I(4),
+                job: I(5)
+            })
+            .then(resp => 0)
+            .catch(err => 1);
+    }
+    Q('input[type="tel"]').onkeydown = e => [...
+        '+0123456789', 'Backspace'
+    ].includes(e.key) ? true : e.preventDefault();
+
+    Q('input[type="checkbox"]').onchange = function() {
+        Q('button').disabled = !this.checked;
+    }
+    $('select option').click(function() {
+        $(this).parent('select')[0].selected = true;
+    })
+</script>
+
+</html>
 
 </html>

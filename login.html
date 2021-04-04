@@ -6,17 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <style></style>
-    <script src="./email.min.js"></script>
-    <script>
-        (function() {
-            // https://dashboard.emailjs.com/admin/integration
-            emailjs.init("user_kaMQbGKNuOZV75pRUV7jD");
-        })();
-        Q = q => document.querySelector(q);
-        _Q = q => [...document.querySelectorAll(q)];
-        V = (q, n) => n ? _Q(q)[n].value : Q(q).value;
-        I = n => _Q('input')[n].value;
-    </script>
+
 
     <style>
         * {
@@ -91,20 +81,6 @@
 
 </body>
 <script>
-    emailjs.send("Jain Info App", "SignUp", {
-            fname = I(0),
-            lname = I(1),
-            gender = I(3),
-            dob,
-            service,
-            address,
-            number,
-            email,
-            qual,
-            job
-        })
-        .then(resp => 0)
-        .catch(err => 1);
 </script>
 
 
