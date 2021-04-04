@@ -1,31 +1,139 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="../B4/css/bootstrap.min.css">
-<form>
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-    </div>
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-    </div>
-    <div class="input-group">
-        <span class="input-group-addon">Text</span>
-        <input id="msg" type="text" class="form-control" name="msg" placeholder="Additional Info">
-    </div>
+<!doctype html>
+<html lang="en">
 
+<head>
+    <title>login form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../B4/css/bootstrap.min.css"> -->
 
-    <div class="input-group mb-2 mr-sm-2">
-        <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
+    <style>
+        /* @media screen and (maxwidth:400px) {*/
+        
+        body {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        .input-group,
+        .form-row {
+            margin: 10px;
+        }
+        
+        textarea {
+            resize: none
+        }
+        /* }*/
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="form-row">
+            <div class="col">
+                <!-- fname -->
+                <input type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <!-- lname -->
+                <input type="text" class="form-control" placeholder="Last name">
+            </div>
         </div>
-        <input type="text" class="form-control"  placeholder="Username">
-    </div>
-</form>
+
+        <div class="col-auto my-1">
+            <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label> -->
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <!-- select -->
+              <option selected>--Gender--</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">DOB</div>
+            </div>
+            <input type="date" class="form-control" placeholder="Date of Birth">
+        </div>
+
+        <div class="col-auto my-1">
+            <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label> -->
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <!-- select -->
+              <option selected>--Programmes--</option>
+              <option value="1">Digital Marketing</option>
+              <option value="2">Web Designing</option>
+              <option value="3">Afiliate Marketing</option>
+              <option value="3">Advertising</option>
+            </select>
+        </div>
+
+
+        <div class="input-group mb-2 mr-sm-2">
+
+            <textarea rows="3" class="form-control" placeholder="Address"></textarea>
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" placeholder="Number">
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" placeholder="Email">
+        </div>
+
+        <div class="col-auto my-1">
+            <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label> -->
+            <select class="custom-select mr-sm-2">
+                <!-- select -->
+              <option selected>--Qualifications--</option>
+              <option value="1">High School</option>
+              <option value="2">Secondary High School</option>
+              <option value="3">Graduate</option>
+              <option value="4">Post Graduate</option>
+              <option value="5" onclick="">Other</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" placeholder="Job Title">
+        </div>
+        <br>
+        <div class="col-auto my-1">
+            <div class="custom-control custom-checkbox mr-sm-2">
+                <input type="checkbox" class="custom-control-input">
+                <label class="custom-control-label">I agree to the <a href="/terms">Terms & Conditions</a></label>
+            </div>
+        </div>
+        <br>
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
