@@ -17,13 +17,42 @@
         V = (q, n) => n ? _Q(q)[n].value : Q(q).value;
         I = n => _Q('input')[n].value;
     </script>
+
+    <style>
+        * {
+            border: 0;
+        }
+        
+        body {
+            color: black;
+            background: white;
+        }
+        
+        input,
+        textarea,
+        select {
+            font-family: Arial, sans-serif;
+            border: 1px solid silver;
+            border-radius: 3px;
+            padding: 5px;
+            margin: 2px;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border: 0.5px solid blue;
+            padding: 4.5px;
+            box-shadow: 0 0 4px 1px rgb(0, 119, 255);
+        }
+    </style>
 </head>
 
 <body>
     <h1>Sign Up</h1>
     <form>
-        <input placeholder="First name">
-        <input placeholder="Last name">
+        <p><input placeholder="First name"></p>
+        <p><input placeholder="Last name"></p>
         <select>
            <option>Gender</option>
            <option>Male</option>
@@ -31,7 +60,7 @@
            <option>Other</option>
        </select>
 
-        <input type="date" placeholder="Date of Birth">
+        <p><input type="date" placeholder="Date of Birth"></p>
         <select placeholder="Programmes" value="Programmes">
         <option>Digital Marketing</option>
         <option>Web Designing</option>
@@ -39,9 +68,9 @@
         <option>Advertising</option>
     </select>
 
-        <textarea placeholder="Address"></textarea>
-        <input type="tel" placeholder="Phone no.">
-        <input type="email" placeholder="Email">
+        <p><textarea placeholder="Address"></textarea></p>
+        <p><input type="tel" placeholder="Phone no."></p>
+        <p><input type="email" placeholder="Email"></p>
 
         <select placeholder="Qualifications" value="Programmes">
         <option>High School</option>
@@ -50,11 +79,13 @@
         <option>Post Graduation</option>
         <option id="other">Other</option>
     </select>
-        <input placeholder="Job Title">
+        <p><input placeholder="Job Title"></p>
 
-        <p><input type="checkbox" checked>I agree to the <a>Terms & conditions</a>.</p>
+        <p>
+            <p><input type="checkbox" checked>I agree to the <a>Terms & conditions</a>.</p>
+        </p>
 
-        <input type="submit" value="Proceed">
+        <p><input type="submit" value="Proceed"></p>
 
     </form>
 
