@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-
+    <script>
+        let Q = q => document.querySelector(q);
+        let _Q = q => document.querySelectorAll(q);
+    </script>
 </head>
 
 <body></body>
@@ -378,7 +381,7 @@
                     <p class="bigger">Learn more tips and firm insights on other relevant topics presented on our blog i.e. SEO, SMM, SMO.</p>
                 </div>
 
-                <div id="CM" hidden>
+                <div id="CW" hidden>
                     <h4>Content Writing: Basics and Essential Tips for Effective Content</h4>
                     <p>
                         Are you thinking about taking up content writing as a career for your future? Well, in my opinion, you should go for it. Firstly, it is an in-demand career. Secondly, becoming a content writer is a satisfying professional pathway. In this article, we
@@ -504,9 +507,7 @@
 </article>
 
 </body>
-<script type="module">
-    import Splide from '@splidejs/splide'; import Video from '@splidejs/splide-extension-video'; new Splide( '#splide', { heightRatio: 0.5625, cover : true, lazyLoad : 'sequential', video : { loop: true, }, } ).mount( { Video } );</script>
-<!-- partial -->
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js'></script>
 <script src="./script.js"></script>
@@ -514,17 +515,23 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script>
-    document.querySelectorAll('#footnav span').forEach(n =>
+    let nav = _Q('#footnav span');
+    let services = Q('#services');
+    for (let n of nav)
         n.onclick = function() {
+            nav.forEach(i => i.style.color = 'grey');
             this.style.color = 'skyblue';
             let txt = this.innerText;
-            document.querySelectorAll('div[hidden]').forEach(div => function() {
-                if (this.id == txt)
-                    this.style.display = 'block';
-                else 
-                this.style.display = 'none';
-            })
-        })
+            let html = services.innerHTML;
+            services.innerHTML = document.getElementById(txt).innerHTML + html;
+        };
+    /*$('#footnav span').click(function() {
+        $('#footnav span').css('color', 'grey');
+        $(this).css('color', 'skyblue');
+        let txt = $(this).text();
+        let html = $('#services').html();
+        $('#services').html($('#' + txt).html() + html);
+    })*/
 </script>
 
 </html>
