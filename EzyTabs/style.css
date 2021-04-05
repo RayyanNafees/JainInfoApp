@@ -1,0 +1,51 @@
+html,
+body {
+  min-height: 100%;
+}
+
+#pages-container {
+  height: 500px;
+  background: #f1f1f1;
+  border: 1px solid #dedede;
+}
+#pages-container .swiper-slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pages-container-inner {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#main-navigation {
+  box-shadow: 2px 0 2px 666;
+}
+#main-navigation ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+}
+#main-navigation ul .nav-link {
+  padding: 10px;
+  flex-grow: 1;
+  text-align: center;
+  border-right: 1px solid #dedede;
+  cursor: pointer;
+}
+
+.links-container {
+  position: relative;
+  padding: 0;
+}
+
+#magic-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: #fe4902;
+}
