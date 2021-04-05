@@ -2,6 +2,7 @@ html,
 body {
     min-height: 100%;
     border: 0;
+    font-family: "Segoe WPC", "Segoe UI", sans-serif, Arial;
 }
 
 header {
@@ -27,7 +28,6 @@ header button {
 }
 
 #home {
-    margin-top: 45%;
     padding: 20px;
 }
 
@@ -43,7 +43,6 @@ header button {
 }
 
 #about {
-    margin-top: 10%;
     padding: 20px;
 }
 
@@ -81,19 +80,19 @@ header button {
 }
 
 #pages-container {
-    height: 500px;
+    /* height: 500px; */
     background: #f1f1f1;
     border: 1px solid #dedede;
 }
 
 #pages-container .swiper-slide {
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 #pages-container-inner {
-    overflow-x: hidden;
+    overflow-x: scroll;
     height: 100%;
 }
