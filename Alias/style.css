@@ -1,24 +1,48 @@
 html,
 body {
     min-height: 100%;
+    border: 0;
 }
 
-#pages-container {
-    height: 500px;
-    background: #f1f1f1;
-    border: 1px solid #dedede;
-}
-
-#pages-container .swiper-slide {
-    height: 100%;
+header {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: deepskyblue;
 }
 
-#pages-container-inner {
-    overflow-x: hidden;
-    height: 100%;
+header menu {}
+
+header h1 {}
+
+header button {
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    border: 0;
+    background: rgba(0, 191, 255, 0.699);
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+}
+
+#home {
+    margin-top: 45%;
+    padding: 20px;
+}
+
+#services {}
+
+#services #footnav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly
+}
+
+#about {
+    margin-top: 10%;
+    padding: 20px;
 }
 
 #main-navigation {
@@ -41,8 +65,8 @@ body {
 .links-container {
     position: relative;
     padding: 0;
-    background-color: lightseagreen;
-    color: white;
+    background: deepskyblue;
+    color: white
 }
 
 #magic-line {
@@ -52,4 +76,22 @@ body {
     width: 100px;
     height: 4px;
     background-color: lightgreen;
+}
+
+#pages-container {
+    height: 500px;
+    background: #f1f1f1;
+    border: 1px solid #dedede;
+}
+
+#pages-container .swiper-slide {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pages-container-inner {
+    overflow-x: hidden;
+    height: 100%;
 }
