@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Jain Info App</title>
+    <link rel="icon" href="./assets/JainInfo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -42,7 +43,7 @@
                 <div id="home">
                     <h3>SEO – Search Engine Optimization</h3>
 
-                    <p class="context">
+                    <p>
                         What is SEO and how does SEO works? Here we’ll start with the basics of SEO description and SEO importance. This post will be an introduction and outline of Search Engine Optimization (SEO), where you will have a basic idea about it. Kindly read the article
                         carefully and at the end, you’ll have a strong understanding of what SEO is, why it’s valued and significant.
                     </p>
@@ -53,7 +54,7 @@
                         </blockquote>
                     </section>
 
-                    <p class="context">
+                    <p>
                         SEO plays an essential part in <b>Digital Marketing</b> because individuals conduct tons of searches now and then, to find information about products, services, and much more. The basic source of digital traffic accompaniments,
                         brands, and other promotion channels is Search. Superior visibility and ranking higher in search results than your rivalryis everything one wants who owns a website.
                     </p>
@@ -64,7 +65,7 @@
                         </blockquote>
                     </section>
 
-                    <p class="context">
+                    <p>
                         <b>On-Page SEO:</b> On-page SEO commonly known as ‘on-site SEO’ is the practice of improving webpage/website content for search engines and operators. Common on-page SEO practices comprise optimizing title tags, content, internal
                         links, and URLs.It’s a matter that you have control over and can do modifications on your own site.
                     </p>
@@ -83,7 +84,7 @@
                         <li>Fast loading and mobile-friendly pages</li>
                     </ul>
 
-                    <p class="context">
+                    <p>
                         <b>Off-Page SEO:</b> Off-page SEO commonly known as ‘off-site SEO’ states actions taken outside of your own website to influence your rankings within Search Engine Results Pages (SERPs). Building backlinks is the main part of off-page
                         SEO.
                     </p>
@@ -120,7 +121,7 @@
                         </tr>
                     </table>
 
-                    <p class="context">Hope this article was helpful to you. You can read more relevant topics about Digital Marketing on our website homepage. Kindly leave your queries in the comment box below.</p>
+                    <p>Hope this article was helpful to you. You can read more relevant topics about Digital Marketing on our website homepage. Kindly leave your queries in the comment box below.</p>
 
 
                 </div>
@@ -139,14 +140,18 @@
 
                 <div id="services">
                     <nav id="footnav">
-                        <span>SEO</span>
-                        <span>SMO</span>
-                        <span>SMM</span>
-                        <span>SEM</span>
-                        <span>CW</span>
+                        <span onclick="show(this)">SEO</span>
+                        <span onclick="show(this)">SMO</span>
+                        <span onclick="show(this)">SMM</span>
+                        <span onclick="show(this)">SEM</span>
+                        <span onclick="show(this)">CW</span>
                     </nav>
-                </div>
 
+                    <div id="content"></div>
+                </div>
+                <div id="SEO" hidden>
+                    <h3>Nothing in here...</h3>
+                </div>
                 <div id="SMO" hidden>
                     <h3>Social Media Optimisation / SMO – What is it?</h3>
                     <p>
@@ -510,21 +515,26 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js'></script>
-<script src="./assets/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./assets/script.js"></script>
 
 <script>
-    let nav = _Q('#footnav span');
-    let services = Q('#services');
-    for (let n of nav)
-        n.onclick = function() {
-            nav.forEach(i => i.style.color = 'grey');
-            this.style.color = 'skyblue';
-            let txt = this.innerText;
-            let html = services.innerHTML;
-            services.innerHTML = document.getElementById(txt).innerHTML + html;
-        };
+    function show(elt) {
+        _Q('#footnav span').forEach(i => i.style.color = 'grey');
+        elt.style.color = 'skyblue';
+        let txt = elt.innerText;
+        Q('#content').innerHTML = document.getElementById(txt).innerHTML;
+    };
+    /*function show(elt) {
+                elt = $(elt);
+                _Q('#footnav span').forEach(i => i.style.color = 'grey');
+                elt.css('color', 'skyblue');
+                let txt = elt.text();
+                console.log($('#' + txt).clone());
+                $('#content').append($('#' + txt).clone());
+            }
+          */
     /*$('#footnav span').click(function() {
         $('#footnav span').css('color', 'grey');
         $(this).css('color', 'skyblue');
@@ -540,4 +550,4 @@
 
 <!-- Be sure to add that fade on scroll effect -->
 
-<!-- Be sure to add that fade on scroll effect -->
+<!-- Be sure to add that fade on scroll effect --

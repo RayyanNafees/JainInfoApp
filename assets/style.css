@@ -12,9 +12,12 @@ header {
     margin: 0;
 }
 
+
+/* 
 header menu {}
 
-header h1 {}
+header h1 {} 
+*/
 
 header button {
     position: absolute;
@@ -31,21 +34,46 @@ header button {
     padding: 20px;
 }
 
-#services {}
+#home section {
+    padding: 10px;
+}
+
+
+/* #services {} */
 
 #services #footnav {
     z-index: 4;
-    color: white;
-    position: fixed;
-    bottom: 0;
+    color: black;
+    position: absolute;
+    top: 0%;
     width: 100%;
+    min-width: max-content;
     background-blend-mode: overlay;
     display: flex;
     justify-content: space-evenly;
-    box-shadow: 0 3px 10px black;
+    box-shadow: 0 3px 3px silver;
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
+    background: white;
+}
+
+#content {
+    margin-top: 5%;
+    padding: 20px;
+}
+
+p.bigger {
+    font-size: larger;
+    padding: 20px;
+    background: aliceblue;
+    color: blue;
+    text-align: center;
+    width: 96%;
+    margin: 2%;
+    font-weight: 500;
+    font-variant: small-caps;
+    word-wrap: break-word;
 }
 
 #about {
